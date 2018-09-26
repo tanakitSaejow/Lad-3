@@ -1,0 +1,126 @@
+#include <stdio.h>
+
+int main () {
+	int type ;
+	
+	printf("Please Select Your Case ( 1 2 3 4 5 ) : ") ;
+	scanf("%d", &type) ;
+	printf("\n-----------------------------------------\n\n") ;
+	
+	switch (type) 
+	{
+		case 1 :
+		
+				int Num1, Num2, Num3 ;
+	
+				printf("Enter your 3 number (eg.1 2 3 or 5 7 3) = ") ;
+				scanf("%d %d %d",&Num1, &Num2, &Num3) ;
+	
+				if(Num1 < Num2 && Num1 > Num3) {
+					printf("Max = %d | Min = %d",Num2, Num3) ;
+				}
+				else if(Num1 == Num2 && Num2 == Num3) {
+					printf("Max = %d | Min = %d",Num3,Num1) ;
+				}
+				else if(Num1 < Num2 && Num2 < Num3) {
+					printf("Max = %d | Min = %d",Num3,Num1) ;
+				}
+				else if(Num1 > Num2 && Num2 < Num3) {
+					printf("Max = %d | Min = %d",Num1,Num2) ;
+				}
+				else if(Num3 > Num2 && Num2 < Num1) {
+					printf("Max = %d | Min = %d",Num3,Num1) ;
+				}
+				else if(Num2 > Num3 && Num3 > Num1) {
+					printf("Max = %d | Min = %d",Num2,Num1) ;
+				}
+				else if(Num1 > Num2 && Num2 > Num3) {
+					printf("Max = %d | Min = %d",Num1,Num3) ;
+			
+	            }  break ;
+	    
+		case 2 :
+				
+				int Score ;
+	
+				printf("Enter your Score : ") ; 
+				scanf("%d",&Score) ;
+					
+				if(Score >= 101 || Score <= -1 ) {
+					printf("Score Error !!") ;
+				}
+				else if (Score >= 80 && Score <=100 ) {
+					printf("Grade = A") ;
+				}
+					else if (Score >= 75 && Score <= 79 ) {
+					printf("Grade = B+") ;
+				}
+				else if (Score >= 70 && Score <=74 ) {
+					printf("Grade = B") ;
+				}
+				else if (Score >= 65 && Score <=69 ) {
+					printf("Grade = C+") ;
+				}
+				else if (Score >= 60 && Score <=64 ) {
+					printf("Grade = C") ;
+				}
+				else if (Score >= 55 && Score <=59 ) {
+					printf("Grade = D+") ;
+				}
+				else if (Score >= 50 && Score <=54 ) {
+					printf("Grade = D") ;
+				}
+				else if (Score >= 0 && Score <=49 ) {
+					printf("Grade = F") ;
+						
+				} break ;
+		
+		case 3 : 
+		
+				int N1, N2, Sum ;
+				
+				printf("Please Enter your Number1 : ") ;
+				scanf("%d",&N1) ;
+				printf("Please Enter your Number2 : ") ;
+				scanf("%d",&N2) ;	
+				Sum = N1 + N2 ;
+				printf("Plus is %d",Sum) ;
+					
+				break ;
+				
+		case 4 :
+		
+				int Num, SumMultiple ;
+				printf("Please Enter your Number : ") ;
+				scanf("%d",&Num) ;
+				
+				for(int i = 1 ; i <= 12 ; i++) {
+					SumMultiple = Num*i ;
+					printf("%d x %d = %d\n",Num, i, SumMultiple) ;
+				}
+				
+				break ;
+		
+		case 5 : 
+				
+				int i, j ;
+				
+				printf("Prime Numer is : ") ;
+				
+				for(i = 1 ; i <= 30 ;  i++) {
+					for(j = 2 ; j <= i ; j++) {
+						if(i%j == 0) {
+							break ;
+						}
+					}
+					if(i == j) {
+						printf("%d ",i) ;
+					}
+				}
+				
+				break;
+				        
+		
+		default : printf("Error!! Switch-Case \n") ;			
+	}
+}
